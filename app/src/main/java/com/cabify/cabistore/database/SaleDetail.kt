@@ -15,7 +15,7 @@ data class SaleDetail(
 
   @ColumnInfo(name = "price") val price: Int = 25,
 
-  @ColumnInfo(name = "time") var time: Int = 0,
+  @ColumnInfo(name = "time") var time: Long = 0
 
-  @ColumnInfo(name = "shippingPrice") var shippingPrice: Int = 0
+
 )

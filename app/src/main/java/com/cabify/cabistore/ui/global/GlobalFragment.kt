@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 
@@ -15,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.cabify.cabistore.R
 import com.cabify.cabistore.adapter.GlobalAdapter
+import com.cabify.cabistore.adapter.GlobalListener
 
 import com.cabify.cabistore.database.StoreDatabase
 import com.cabify.cabistore.databinding.FragmentGlobalBinding
@@ -44,7 +46,7 @@ class GlobalFragment : Fragment() {
 
     binding.imageGraph.bringToFront()
     binding.lifecycleOwner = this
-    //viewModel = ViewModelProvider(this).get(GlobalViewModel::class.java)
+
 
     val viewModel = ViewModelProviders.of(
         this, viewModelFactory).get(GlobalViewModel::class.java)
@@ -53,7 +55,11 @@ class GlobalFragment : Fragment() {
 
     binding.viewModel = viewModel
 
-    val adapter = GlobalAdapter()
+    val adapter = GlobalAdapter(GlobalListener { productCode ->
+      Toast.makeText(context, "${productCode}", Toast.LENGTH_LONG).show()
+    })
+
+
 
 
     binding.recyclerView.adapter = adapter
@@ -62,14 +68,9 @@ class GlobalFragment : Fragment() {
 
     viewModel.products.observe(viewLifecycleOwner, Observer {
       it?.let {
-        adapter.data = viewModel.list
+        adapter.submitList(viewModel.list)
       }
     })
-//    viewModel.sales.observe(viewLifecycleOwner, Observer {
-//      it?.let {
-//        adapter.data = it as ArrayList<Products>
-//      }
-//    })
 
 
 
@@ -77,24 +78,5 @@ class GlobalFragment : Fragment() {
   }
 
 
-//  private fun getAccounts(): ArrayList<Products> {
-//    return object : ArrayList<Products>() {
-//      init {
-//        try {
-//          val inputStream = activity!!.assets.open("products.json")
-//          val json: String? = inputStream.bufferedReader().use { it.readText() }
-//          val jsonArr = JSONArray(json)
-//          val jsonObjc = jsonArr.getJSONObject(0)
-//          val accountJson = jsonObjc.getJSONArray("products")
-//          for (i in 0 until accountJson.length()) {
-//            val code: String = accountJson.getJSONObject(i).getString("code")
-//            val name = accountJson.getJSONObject(i).getString("name")
-//            val price = accountJson.getJSONObject(i).getInt("price")
-//            add(Products(0,code, name, price,"0"))
-//          }
-//        } catch (e: IOException) {
-//        }
-//      }
-//    }
-//  }
+
 }

@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import com.cabify.cabistore.model.Bill
-
+import com.cabify.cabistore.model.Products
 
 @SuppressLint("Registered")
 class App : Application() {
@@ -31,6 +31,9 @@ class App : Application() {
       private set
     var bill = Bill()
 
+    var p = listOf<Products>()
+    //val quantityOrdered: IntArray = IntArray(p.size)
+    var quantityOrdered: IntArray = IntArray(3)
 
 
   }
