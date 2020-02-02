@@ -1,0 +1,387 @@
+[
+ {
+  "accounts": [
+   {
+    "id": 1,
+    "name": "Mis Cuentas",
+    "image": "folder",
+    "type": "Disponible en cuenta",
+    "amount": "12.230,50 €",
+    "number": ""
+   },
+   {
+    "id": 2,
+    "name": "Mis tarjetas de débito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "854,89 €",
+    "number": ""
+   },
+   {
+    "id": 3,
+    "name": "Mis tarjetas de crédito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },{
+    "id": 1,
+    "name": "Mis Cuentas",
+    "image": "folder",
+    "type": "Disponible en cuenta",
+    "amount": "12.230,50 €",
+    "number": ""
+   },
+   {
+    "id": 2,
+    "name": "Mis tarjetas de débito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "854,89 €",
+    "number": ""
+   },
+   {
+    "id": 3,
+    "name": "Mis tarjetas de crédito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },{
+    "id": 1,
+    "name": "Mis Cuentas",
+    "image": "folder",
+    "type": "Disponible en cuenta",
+    "amount": "12.230,50 €",
+    "number": ""
+   },
+   {
+    "id": 2,
+    "name": "Mis tarjetas de débito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "854,89 €",
+    "number": ""
+   },
+   {
+    "id": 3,
+    "name": "Mis tarjetas de crédito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },{
+    "id": 1,
+    "name": "Mis Cuentas",
+    "image": "folder",
+    "type": "Disponible en cuenta",
+    "amount": "12.230,50 €",
+    "number": ""
+   },
+   {
+    "id": 2,
+    "name": "Mis tarjetas de débito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "854,89 €",
+    "number": ""
+   },
+   {
+    "id": 3,
+    "name": "Mis tarjetas de crédito",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 4,
+    "name": "Mis cuentas conjuntas",
+    "image": "card",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": ""
+   },
+   {
+    "id": 5,
+    "name": "Mi hipoteca",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   },
+   {
+    "id": 5,
+    "name": "Mi Cuenta pensión",
+    "image": "folder",
+    "type": "Gastado este mes",
+    "amount": "1.200 €",
+    "number": "**** **** **** **** 0130"
+   }
+  ]
+ }
+]

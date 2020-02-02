@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ App Android
+  ~ Copyright (C) 2020 Banco Caminos
+  ~ All Rights Reserved, unauthorized copying of this file, via any medium is strictly prohibited.
+  ~ Proprietary and confidential.
+  ~ Written by Banco Caminos <https://www.bancocaminos.es>, 2020
+  -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:id="@+id/primary">
+
+    <item
+      android:id="@+id/global_dest"
+      android:icon="@drawable/ic_home_checkable"
+      android:title="@string/my_products" />
+    <item
+      android:id="@+id/transfer"
+      android:icon="@drawable/ic_transfer_checkable"
+      android:title="@string/transfer" />
+    <item
+      android:id="@+id/profile"
+      android:icon="@drawable/ic_profile_checkable"
+      android:title="@string/profile" />
+
+    <item
+      android:id="@+id/more_options"
+      android:icon="@drawable/ic_more_checkable"
+      android:title="@string/options" />
+  </group>
+</menu>

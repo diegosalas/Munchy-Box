@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion = versions.buildTools
+    defaultConfig {
+        applicationId "com.cabify.cabistore"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.caverock:androidsvg:${versions.androidSvgVersion}"
+    api "androidx.appcompat:appcompat:${versions.appcompat}"
+    api "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    api "com.google.android.material:material:${versions.material}"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
+    api "androidx.appcompat:appcompat:${versions.appcompat}"
+    // Navigation
+    api "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    api "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+    // retrofit
+    api "com.squareup.retrofit2:converter-gson:${versions.retrofit2}"
+    api "com.squareup.okhttp3:logging-interceptor:${versions.okhttpLoggingInterceptor}"
+    api "com.squareup.retrofit2:converter-scalars:${versions.retrofit2}"
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.room:room-runtime:2.2.3'
+    kapt "androidx.room:room-compiler:2.2.3"
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
+}

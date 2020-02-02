@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#32516c</color>
+  <color name="colorPrimaryDark">#00574B</color>
+  <color name="colorSecondary">#FFDD9D</color>
+  <color name="colorAccent">#D81B60</color>
+  <color name="white">#FFFFFF</color>
+  <color name="surfaceGray">#F7FAFA</color>
+  <color name="ckColor">#D9AB6F</color>
+  <color name="colorPrimaryAccent">#002941</color>
+  <color name="backgroundGray">#EEEEF3</color>
+  <color name="primaryDark_custom">#002941</color>
+  <color name="accent_custom">@color/startBlue</color>
+  <color name="startBlue">#043E60</color>
+  <color name="cabify_color">#7038FF</color>
+
+</resources>
