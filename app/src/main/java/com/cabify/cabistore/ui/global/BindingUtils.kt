@@ -1,10 +1,8 @@
 package com.cabify.cabistore.ui.global
 
-import android.provider.Settings.Global.getString
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.cabify.cabistore.R
-import com.cabify.cabistore.model.Products
+import com.cabify.cabistore.database.Products
 
 
 @BindingAdapter("setProductName")

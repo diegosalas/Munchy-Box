@@ -6,14 +6,22 @@
   <data>
    <variable
      name="product"
-     type="com.cabify.cabistore.model.Products" />
+     type="com.cabify.cabistore.database.Products" />
     <variable
       name="saleDetail"
       type="com.cabify.cabistore.database.SaleDetail" />
 
     <variable
-      name="clickListener"
-      type="com.cabify.cabistore.adapter.GlobalListener" />
+    name="clickListener"
+    type="com.cabify.cabistore.ui.global.GlobalListener" />
+
+    <variable
+    name="removeClickListener"
+    type="com.cabify.cabistore.ui.global.RemoveListener" />
+
+    <variable
+      name="addClickListener"
+      type="com.cabify.cabistore.ui.global.AddListener" />
 
 
   </data>
@@ -86,13 +94,12 @@
       android:clickable="true"
       android:elevation="4dp"
       android:focusable="true"
-
       android:tint="@color/colorPrimaryAccent"
+      android:onClick="@{() -> removeClickListener.onClick(product)}"
       app:layout_constraintBottom_toBottomOf="@+id/viewAccounts"
       app:layout_constraintStart_toEndOf="@+id/textProductName"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"
       app:layout_constraintVertical_bias="0.511"
-
       app:srcCompat="@drawable/ic_remove_box" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -104,6 +111,7 @@
       android:elevation="4dp"
       android:focusable="true"
       android:tint="@color/colorPrimaryAccent"
+      android:onClick="@{() -> addClickListener.onClick(product)}"
       app:layout_constraintBottom_toBottomOf="@+id/viewAccounts"
       app:layout_constraintStart_toEndOf="@+id/quantityTextView"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"

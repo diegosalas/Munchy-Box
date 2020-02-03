@@ -1,4 +1,4 @@
-package com.cabify.cabistore.model
+package com.cabify.cabistore.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -10,6 +10,6 @@ data class Products(
   @ColumnInfo(name = "code") val code: String,
   @ColumnInfo(name = "name") val name: String,
   @ColumnInfo(name = "price") val price: Int,
-  @ColumnInfo(name = "quantity") var quantity: String
+  @ColumnInfo(name = "quantity") var quantity: Int
 
 )

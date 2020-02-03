@@ -6,8 +6,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
-import com.cabify.cabistore.model.Bill
-import com.cabify.cabistore.model.Products
+
 
 @SuppressLint("Registered")
 class App : Application() {
@@ -16,7 +15,7 @@ class App : Application() {
 
   override fun onCreate() {
     super.onCreate()
-
+    instance = this
     prefs = applicationContext.getSharedPreferences("cabStore", AppCompatActivity.MODE_PRIVATE)
     context = applicationContext
 
@@ -25,15 +24,16 @@ class App : Application() {
   }
 
   companion object {
+    lateinit var instance: App
+      private set
     lateinit var prefs: SharedPreferences
       private set
     lateinit var context: Context
       private set
-    var bill = Bill()
 
-    var p = listOf<Products>()
     //val quantityOrdered: IntArray = IntArray(p.size)
     var quantityOrdered: IntArray = IntArray(3)
+
 
 
   }

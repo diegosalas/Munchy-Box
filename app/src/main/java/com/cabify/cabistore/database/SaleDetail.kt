@@ -7,15 +7,17 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "sale_list_table")
 data class SaleDetail(
-  @PrimaryKey(autoGenerate = true) var saleId: Int = 0,
 
-  @ColumnInfo(name = "productId") val productID: String = "TSHIRT",
 
-  @ColumnInfo(name = "quantity") val quantity: Int = 1,
 
-  @ColumnInfo(name = "price") val price: Int = 25,
+  @PrimaryKey(autoGenerate = false)  val code: String = "DEFAULT",
 
-  @ColumnInfo(name = "time") var time: Long = 0
+  @ColumnInfo val name: String = "",
+
+  @ColumnInfo val price: Int = 0,
+
+  @ColumnInfo var quantity: Int = 0
+
 
 
 )

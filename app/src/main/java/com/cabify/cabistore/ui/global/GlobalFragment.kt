@@ -15,16 +15,9 @@ import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProviders
 import com.cabify.cabistore.R
-import com.cabify.cabistore.adapter.GlobalAdapter
-import com.cabify.cabistore.adapter.GlobalListener
 
 import com.cabify.cabistore.database.StoreDatabase
 import com.cabify.cabistore.databinding.FragmentGlobalBinding
-import com.cabify.cabistore.model.Products
-
-import org.json.JSONArray
-import java.io.IOException
-
 
 class GlobalFragment : Fragment() {
 
@@ -55,9 +48,15 @@ class GlobalFragment : Fragment() {
 
     binding.viewModel = viewModel
 
-    val adapter = GlobalAdapter(GlobalListener { productCode ->
-      Toast.makeText(context, "${productCode}", Toast.LENGTH_LONG).show()
-    })
+    val adapter =
+      GlobalAdapter(GlobalListener { productCode ->
+        //Toast.makeText(context, "${productCode}", Toast.LENGTH_LONG).show()
+      },AddListener { code, name, price ->
+        viewModel.addItem(code, name, price)
+      },RemoveListener  { code ->
+        viewModel.removeItem(code)
+      }
+      )
 
 
 
