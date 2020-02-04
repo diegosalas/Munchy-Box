@@ -6,7 +6,7 @@
   <data>
    <variable
      name="product"
-     type="com.cabify.cabistore.database.Products" />
+     type="com.cabify.cabistore.database.SaleDetail" />
     <variable
       name="saleDetail"
       type="com.cabify.cabistore.database.SaleDetail" />
@@ -36,7 +36,7 @@
     android:paddingEnd="10dp"
     android:paddingBottom="5dp"
     app:layout_constraintCircleRadius="3dp"
-    android:onClick="@{() -> clickListener.onClick(product)}"
+
     >
 
     <View
@@ -64,7 +64,7 @@
       android:textColor="@color/colorPrimaryAccent"
       android:textSize="23sp"
       android:textStyle="bold"
-      android:visibility="gone"
+      android:visibility="visible"
       app:layout_constraintBottom_toTopOf="@+id/textAccountNumber"
       app:layout_constraintStart_toEndOf="@+id/removeButton"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"
@@ -86,6 +86,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"
       app:setProductName="@{product}"
+      android:onClick="@{() -> clickListener.onClick(product)}"
       />
 
     <androidx.appcompat.widget.AppCompatImageView

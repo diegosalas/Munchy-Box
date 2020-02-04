@@ -6,16 +6,19 @@ import android.provider.SyncStateContract.Helpers.update
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.cabify.cabistore.App
+
 import com.cabify.cabistore.database.SaleDetail
 import com.cabify.cabistore.database.StoreDatabaseDao
-import com.cabify.cabistore.database.Products
+
 import kotlinx.coroutines.*
 import org.json.JSONArray
 import java.io.IOException
 
 class GlobalViewModel(val database: StoreDatabaseDao, application: Application) : AndroidViewModel(application) {
-  val list: ArrayList<Products> by lazy { getAccounts() }
+  //val list: ArrayList<SaleDetail> by lazy { getAccounts() }
+
+
+
   private var viewModelJob = Job()
   private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
   private val _total = MutableLiveData(database.getTotal())
@@ -24,32 +27,32 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
   val sales = database.getAllSales()
   val products = database.getAllProducts()
+
   private suspend fun insertItem(item: SaleDetail) {
     withContext(Dispatchers.IO) {
-      if(database.get(item.code) == 0){
-          item.quantity = database.get(item.code) + 1
+      if (database.get(item.code) == 0) {
+       // if (item.quantity == 0) {
+          item.quantity = database.get(item.code)
           database.insertItem(item)
 
+        } else {
+          //item.quantity = database.get(item.code)
+          database.updateQuantityStr(item.code, item.quantity)
 
-
-      }
-      else{
-        item.quantity = database.get(item.code) + 1
-        database.updateQuantityStr(item.code,database.get(item.code) + 1)
-
+        }
       }
     }
-  }
+  //}
 
 
 
-  private suspend fun deleteItem(code: String) {
+  private suspend fun deleteItem(code: String, quantity :Int) {
     withContext(Dispatchers.IO) {
 
-      if(database.get(code)>1){
-        database.updateQuantityStr(code, database.get(code) - 1)
+      if(database.get(code)>0){
+        database.updateQuantityStr(code,quantity )
       } else if (database.get(code)==1){
-        database.deleteItem(code)
+        //database.deleteItem(code)
       }
       }
 
@@ -57,25 +60,25 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
 
 
- fun addItem(code: String, name:String, price: Int){
+ fun addItem(code: String, name:String, price: Int, quantity: Int){
    uiScope.launch {
 
-      var sale = SaleDetail(code, name, price, 1)
+      var sale = SaleDetail(code, name, price, quantity)
 
       insertItem(sale)
     }
   }
 
-  fun removeItem(code: String){
+  fun removeItem(code: String, quantity: Int){
     uiScope.launch {
-      deleteItem(code)
+      deleteItem(code, quantity)
     }
   }
 
 
-  private fun getAccounts(): ArrayList<Products> {
-    return object : ArrayList<Products>() {
-      init {
+  fun getAccounts(){
+   // return object : ArrayList<SaleDetail>() {
+     // init {
         try {
 
           val jsonArr = JSONArray("""[{"products":[
@@ -89,14 +92,16 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
             val code: String = accountJson.getJSONObject(i).getString("code")
             val name = accountJson.getJSONObject(i).getString("name")
             val price = accountJson.getJSONObject(i).getInt("price")
-            add(Products(code,name,price,1))
+            addItem(code,name,price,0)
+
+
 
 
           }
         } catch (e: IOException) {
         }
-      }
-    }
+     // }
+    //}
   }
 
 }

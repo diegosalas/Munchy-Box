@@ -7,12 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
+
+
+
+import com.cabify.cabistore.database.SaleDetail
 import com.cabify.cabistore.databinding.RecyclerProductsBinding
 
-import com.cabify.cabistore.database.Products
-
-
-class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: AddListener, val removeClickListener: RemoveListener) : ListAdapter<Products, GlobalAdapter.ViewHolder>(
+class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: AddListener, val removeClickListener: RemoveListener) : ListAdapter<SaleDetail, GlobalAdapter.ViewHolder>(
   ProductsDiffCallback()) {
 
   //  var data = listOf<Products>()
@@ -21,6 +22,14 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
   //
   //      notifyDataSetChanged()
   //    }
+
+  override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    val item = getItem(position)
+    holder.bind( clickListener, addClickListener, removeClickListener, item)
+
+  }
+
+
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
     return ViewHolder.from(parent)
@@ -31,16 +40,12 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
   //    return data.size
   //  }
 
-  override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    val item = getItem(position)
-    holder.bind( clickListener, addClickListener, removeClickListener, item)
 
-  }
 
   class ViewHolder private constructor(val binding: RecyclerProductsBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
-    fun bind( clickListener: GlobalListener,addClickListener: AddListener,removeClickListener: RemoveListener, item: Products) {
+    fun bind( clickListener: GlobalListener,addClickListener: AddListener,removeClickListener: RemoveListener, item: SaleDetail) {
 
         binding.product = item
         binding.clickListener = clickListener
@@ -88,12 +93,12 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
     }
   }
 
-  class ProductsDiffCallback : DiffUtil.ItemCallback<Products>() {
-    override fun areItemsTheSame(oldItem: Products, newItem: Products): Boolean {
+  class ProductsDiffCallback : DiffUtil.ItemCallback<SaleDetail>() {
+    override fun areItemsTheSame(oldItem: SaleDetail, newItem: SaleDetail): Boolean {
       return oldItem.code == newItem.code
     }
 
-    override fun areContentsTheSame(oldItem: Products, newItem: Products): Boolean {
+    override fun areContentsTheSame(oldItem: SaleDetail, newItem: SaleDetail): Boolean {
       return oldItem == newItem
     }
 
@@ -105,11 +110,11 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
 
 }
 class GlobalListener(val clickListener: (productCode: String) ->Unit){
-  fun onClick(product: Products) = clickListener(product.code)
+  fun onClick(product: SaleDetail) = clickListener(product.code)
 }
-class AddListener(val AddClickListener: (productCode: String, productName: String, productPrice: Int) ->Unit){
-  fun onClick(product: Products) = AddClickListener(product.code, product.name, product.price)
+class AddListener(val AddClickListener: (productCode: String, productName: String, productPrice: Int, productQty: Int) ->Unit){
+  fun onClick(product: SaleDetail) = AddClickListener(product.code, product.name, product.price, product.quantity)
 }
-class RemoveListener(val RemoveClickListener: (productCode: String) ->Unit){
-  fun onClick(product: Products) = RemoveClickListener(product.code)
+class RemoveListener(val RemoveClickListener: (productCode: String, productQty: Int) ->Unit){
+  fun onClick(product: SaleDetail) = RemoveClickListener(product.code, product.quantity)
 }

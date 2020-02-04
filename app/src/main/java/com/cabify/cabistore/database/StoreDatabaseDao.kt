@@ -11,19 +11,19 @@ interface StoreDatabaseDao {
   fun insertItem(item: SaleDetail)
 
   @Insert
-  fun insertProduct(item: Products)
+  fun insertProduct(item: SaleDetail)
 
   @Query("UPDATE sale_list_table SET quantity = :quantity WHERE code =:code")
   fun updateQuantityStr( code:String,quantity: Int)
 
-  @Query("UPDATE products SET quantity = :quantity WHERE code =:code")
-  fun updateProductQty( code:String,quantity: Int)
+  @Query("UPDATE sale_list_table SET quantity = :quantity WHERE code =:code")
+  fun updateProductQty( code:String, quantity: Int)
 
   @Update
   fun updateQuantity(item: SaleDetail)
 
   @Insert
-  fun insertProduct(product: ArrayList<Products>)
+  fun insertProduct(product: ArrayList<SaleDetail>)
 
 
   @Query("DELETE FROM sale_list_table WHERE code =:code")
@@ -43,13 +43,13 @@ interface StoreDatabaseDao {
   fun getAllSales(): LiveData<List<SaleDetail>>
 
 
-  @Query("SELECT * FROM products ORDER BY code DESC")
-  fun getAllProducts(): LiveData<List<Products>>
+  @Query("SELECT * FROM sale_list_table ORDER BY code DESC")
+  fun getAllProducts(): LiveData<List<SaleDetail>>
 
-  @Query("SELECT quantity FROM sale_list_table WHERE code = :key")
+  @Query("SELECT count(:key) FROM sale_list_table WHERE code = :key")
   fun get(key: String): Int
 
-  @Query("SELECT count(:code) FROM products WHERE code = :code")
+  @Query("SELECT count(:code) FROM sale_list_table WHERE code = :code")
   fun getOneProduct(code: String): Int
 
 

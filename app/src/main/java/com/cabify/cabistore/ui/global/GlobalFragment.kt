@@ -51,11 +51,13 @@ class GlobalFragment : Fragment() {
 
     val adapter =
       GlobalAdapter(GlobalListener { productCode ->
-        //Toast.makeText(context, "${productCode}", Toast.LENGTH_LONG).show()
-      },AddListener { code, name, price ->
-        viewModel.addItem(code, name, price)
-      },RemoveListener  { code ->
-        viewModel.removeItem(code)
+        Toast.makeText(context, "${productCode}", Toast.LENGTH_SHORT).show()
+      },AddListener { code, name, price, quantity ->
+        val q = quantity + 1
+        viewModel.addItem(code, name, price, q)
+      },RemoveListener  { code, quantity ->
+        val q = quantity - 1
+        viewModel.removeItem(code, q)
       }
       )
 
@@ -72,14 +74,19 @@ class GlobalFragment : Fragment() {
 
     viewModel.products.observe(viewLifecycleOwner, Observer {
       it?.let {
-        adapter.submitList(viewModel.list)
+        adapter.submitList(it)
+
       }
     })
+
+    viewModel.getAccounts()
 
 
 
     return binding.root
   }
+
+
 
 
 
