@@ -1,5 +1,6 @@
 package com.cabify.cabistore.utils
 
+import android.annotation.SuppressLint
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 
@@ -20,6 +21,7 @@ fun TextView.setProductCode(item: SaleDetail?){
 }
 
 
+@SuppressLint("SetTextI18n")
 @BindingAdapter("setProductPrice")
 fun TextView.setProductPrice(item: SaleDetail?){
   item?.let{

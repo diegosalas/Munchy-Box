@@ -1,8 +1,0 @@
-<!--
-  ~ App Android
-  ~ Copyright (C) 2020 Banco Caminos
-  ~ All Rights Reserved, unauthorized copying of this file, via any medium is strictly prohibited.
-  ~ Proprietary and confidential.
-  ~ Written by Banco Caminos <https://www.bancocaminos.es>, 2020
-  -->
-<svg height="23" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M6.296 19.268h1.852c0 .976.746 1.768 1.667 1.768.92 0 1.666-.792 1.666-1.768h1.852c0 2.061-1.575 3.732-3.518 3.732-1.943 0-3.519-1.67-3.519-3.732zm13.334-2.75v.393c0 .98-.747 1.768-1.668 1.768H1.667C.747 18.679 0 17.888 0 16.91v-.394c0-1.424.954-2.612 2.222-2.886V9.053C2.222 4.604 5.621 1 9.815 1s7.592 3.605 7.592 8.053v4.578c1.27.273 2.223 1.46 2.223 2.886zm-1.852 0c0-.544-.414-.982-.93-.982-.714 0-1.292-.618-1.292-1.372v-5.11c0-3.364-2.57-6.09-5.741-6.09s-5.74 2.725-5.74 6.09v5.11c0 .757-.582 1.372-1.294 1.372-.513 0-.93.44-.93.981v.197h15.927v-.197z" fill="#5987A4" fill-rule="evenodd"/></svg>

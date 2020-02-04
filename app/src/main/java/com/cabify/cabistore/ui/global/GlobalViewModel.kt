@@ -1,18 +1,15 @@
 package com.cabify.cabistore.ui.global
 
 import android.app.Application
-import android.util.Log
-
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-
 import com.cabify.cabistore.database.SaleDetail
 import com.cabify.cabistore.database.StoreDatabaseDao
-
 import kotlinx.coroutines.*
 import org.json.JSONArray
 import java.io.IOException
+import kotlin.math.ceil
 
 class GlobalViewModel(val database: StoreDatabaseDao, application: Application) : AndroidViewModel(application) {
 
@@ -53,16 +50,16 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
   }
 
-  fun discountBuyTwoGetOne(code: String, quantity: Int){
+  private fun discountBuyTwoGetOne(code: String, quantity: Int){
     if(code =="VOUCHER" && quantity == 1){
       database.deleteItem("DISCOUNT")
     }else if(code =="VOUCHER" && quantity >= 2){
-      val decimal = (Math.ceil((quantity / 2).toDouble())).toInt()
+      val decimal = (ceil(x = (quantity / 2).toDouble())).toInt()
       addItem("DISCOUNT","2X1 Discount on Voucher", -5.00, decimal )
     }
   }
 
-  fun discountBuyThree(code: String, quantity: Int){
+  private fun discountBuyThree(code: String, quantity: Int){
     if(code =="TSHIRT" && quantity < 3){
       database.updatePrice(code, 20.00)
     }else if(code =="TSHIRT" && quantity >= 3){

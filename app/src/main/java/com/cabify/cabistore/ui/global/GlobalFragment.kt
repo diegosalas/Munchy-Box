@@ -25,7 +25,7 @@ class GlobalFragment : Fragment() {
   private lateinit var binding: FragmentGlobalBinding
 
 
- // val list: ArrayList<Products> by lazy { getAccounts() }
+
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     binding = DataBindingUtil.inflate(inflater, R.layout.fragment_global, container, false)
@@ -51,7 +51,11 @@ class GlobalFragment : Fragment() {
 
     val adapter =
       GlobalAdapter(GlobalListener { productCode ->
-        Toast.makeText(context, "${productCode}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+          context,
+          productCode,
+          Toast.LENGTH_SHORT
+        ).show()
       },AddListener { code, name, price, quantity ->
         val q = quantity + 1
         viewModel.addItem(code, name, price, q)
