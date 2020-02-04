@@ -1,15 +1,28 @@
 package com.cabify.cabistore.ui.global
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.cabify.cabistore.api.ApiUtils
+import com.cabify.cabistore.database.Products
 import com.cabify.cabistore.database.SaleDetail
 import com.cabify.cabistore.database.StoreDatabaseDao
+import com.google.gson.JsonArray
+
+import com.squareup.moshi.JsonAdapter
 import kotlinx.coroutines.*
 import org.json.JSONArray
+
+import org.json.JSONObject
+import org.json.JSONStringer
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
 import kotlin.math.ceil
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class GlobalViewModel(val database: StoreDatabaseDao, application: Application) : AndroidViewModel(application) {
 
@@ -17,6 +30,7 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
   private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
   private val _total = MutableLiveData(database.getTotal())
   val total: MutableLiveData<LiveData<Double>> = _total
+  private val tag = GlobalViewModel::class.java.simpleName
 
   val products = database.getAllProducts()
 
@@ -86,21 +100,37 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
     try {
 
-      val jsonArr = JSONArray("""[{"products":[
-                                           {"code":"VOUCHER","name":"Cabify Voucher","price":5},
-                                           {"code":"TSHIRT","name":"Cabify T-Shirt","price":20},
-                                           {"code":"MUG","name":"Cabify Coffee Mug","price":7.5}
-                                            ]}]""")
-      val jsonObjc = jsonArr.getJSONObject(0)
-      val accountJson = jsonObjc.getJSONArray("products")
-      for (i in 0 until accountJson.length()) {
-        val code: String = accountJson.getJSONObject(i).getString("code")
-        val name = accountJson.getJSONObject(i).getString("name")
-        val price = accountJson.getJSONObject(i).getDouble("price")
-        addItem(code, name, price, 0)
 
-      }
+      ApiUtils.apiService.readItems().enqueue(object : Callback <SaleDetail> {
+
+        override fun onResponse(call: Call<SaleDetail>, response: Response<SaleDetail>) {
+          if (response.isSuccessful) {
+            Log.d(tag, "Success: ${response.body().toString()} Product Quantity")
+//            val jsonArr = JSONArray("["+ response.body()+"]")
+//            val jsonArr = JSONArray(response.body())
+//            val jsonObjc = jsonArr.getJSONObject(0)
+//            val accountJson = jsonObjc.getJSONArray("products")
+//            for (i in 0 until accountJson.length()) {
+//              val code: String = accountJson.getJSONObject(i).getString("code")
+//              val name = accountJson.getJSONObject(i).getString("name")
+//              val price = accountJson.getJSONObject(i).getDouble("price")
+//              addItem(code, name, price, 0)
+//            }
+            addItem(response.body()!!.code,response.body()!!.name,response.body()!!.price,response.body()!!.quantity)
+          }
+        }
+
+
+        override fun onFailure(call: Call<SaleDetail>, t: Throwable) {
+          Log.e(tag,  t.localizedMessage!!)
+        }
+
+
+
+      })
+
     } catch (e: IOException) {
+      Log.e(tag,  e.localizedMessage!!)
     }
 
   }

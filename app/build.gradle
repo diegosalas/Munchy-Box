@@ -23,10 +23,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://api.myjson.com/bins/4bwec/\""
         }
+
+        debug{
+            buildConfigField "String", "BASE_URL", "\"https://api.myjson.com/bins/4bwec/\""
+        }
+
     }
     dataBinding {
         enabled true
+    }
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
     }
 }
 
@@ -44,14 +54,24 @@ dependencies {
     // retrofit
     api "com.squareup.retrofit2:converter-gson:${versions.retrofit2}"
     api "com.squareup.okhttp3:logging-interceptor:${versions.okhttpLoggingInterceptor}"
-    api "com.squareup.retrofit2:converter-scalars:${versions.retrofit2}"
+
+
+    // Moshi
+    api "com.squareup.moshi:moshi:$version_moshi"
+    api "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    // Retrofit with Moshi Converter
+    api "com.squareup.retrofit2:retrofit:$version_retrofit"
+    api "com.squareup.retrofit2:converter-moshi:$version_retrofit"
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.room:room-runtime:2.2.3'
+    implementation 'com.google.code.gson:gson:2.8.6'
     kapt "androidx.room:room-compiler:2.2.3"
     annotationProcessor 'androidx.room:room-compiler:2.2.3'
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
-  debugImplementation 'com.idescout.sql:sqlscout-server:4.1'
-  releaseImplementation 'com.idescout.sql:sqlscout-server-noop:4.1'
+    debugImplementation 'com.idescout.sql:sqlscout-server:4.1'
+    releaseImplementation 'com.idescout.sql:sqlscout-server-noop:4.1'
+
 }
