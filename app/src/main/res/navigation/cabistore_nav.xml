@@ -12,5 +12,15 @@
   <fragment
     android:id="@+id/globalFragment"
     android:name="com.cabify.cabistore.ui.global.GlobalFragment"
-    android:label="GlobalFragment" />
+    android:label="GlobalFragment" >
+    <action
+      android:id="@+id/cart_action"
+      app:destination="@+id/cartFragment"
+      app:enterAnim="@anim/fragment_fade_enter"
+      app:exitAnim="@anim/fragment_close_exit" />
+  </fragment>
+  <fragment
+    android:id="@+id/cartFragment"
+    android:name="com.cabify.cabistore.ui.cart.CartFragment"
+    android:label="CartFragment" />
 </navigation>

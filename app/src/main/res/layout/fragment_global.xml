@@ -94,14 +94,15 @@
           app:layout_constraintTop_toTopOf="parent">
 
           <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageNotification"
+            android:id="@+id/ivGoToCart"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:tint="@color/colorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_sin_notificacion" />
+            app:srcCompat="@drawable/ic_cart" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View

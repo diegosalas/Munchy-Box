@@ -1,6 +1,7 @@
 package com.cabify.cabistore.ui.global
 
 import android.app.Application
+import android.provider.SyncStateContract.Helpers.update
 
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -27,13 +28,20 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
     withContext(Dispatchers.IO) {
       if(database.get(item.code) == 0){
           item.quantity = database.get(item.code) + 1
-          database.insertItem(item)}
+          database.insertItem(item)
+
+
+
+      }
       else{
         item.quantity = database.get(item.code) + 1
         database.updateQuantityStr(item.code,database.get(item.code) + 1)
+
       }
     }
   }
+
+
 
   private suspend fun deleteItem(code: String) {
     withContext(Dispatchers.IO) {
@@ -47,12 +55,13 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
   }
 
+
+
  fun addItem(code: String, name:String, price: Int){
-
-
    uiScope.launch {
 
       var sale = SaleDetail(code, name, price, 1)
+
       insertItem(sale)
     }
   }
@@ -80,7 +89,9 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
             val code: String = accountJson.getJSONObject(i).getString("code")
             val name = accountJson.getJSONObject(i).getString("name")
             val price = accountJson.getJSONObject(i).getInt("price")
-            add(Products(0, code, name, price, 0))
+            add(Products(code,name,price,1))
+
+
           }
         } catch (e: IOException) {
         }

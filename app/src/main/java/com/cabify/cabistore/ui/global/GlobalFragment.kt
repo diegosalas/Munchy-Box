@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.cabify.cabistore.R
 
 import com.cabify.cabistore.database.StoreDatabase
@@ -57,6 +58,10 @@ class GlobalFragment : Fragment() {
         viewModel.removeItem(code)
       }
       )
+
+    binding.ivGoToCart.setOnClickListener {
+      findNavController().navigate(R.id.cart_action)
+    }
 
 
 

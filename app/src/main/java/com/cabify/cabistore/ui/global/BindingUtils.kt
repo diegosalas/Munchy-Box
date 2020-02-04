@@ -26,3 +26,10 @@ fun TextView.setProductPrice(item: Products?){
     text = item.price.toString() + " €"
   }
 }
+
+@BindingAdapter("setProductQty")
+fun TextView.setProductQty(item: Products?){
+  item?.let{
+    text = item.quantity.toString()
+  }
+}

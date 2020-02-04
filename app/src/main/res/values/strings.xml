@@ -13,4 +13,6 @@
   <string name="todo" translatable="false">TODO</string>
   <string name="zero">0</string>
   <string name="available">available</string>
+  <string name="add_payment_method">Add payment method</string>
+  <string name="my_item">Item</string>
 </resources>

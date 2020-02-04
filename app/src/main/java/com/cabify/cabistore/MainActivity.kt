@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
     setSupportActionBar(toolbar)
     fab.setOnClickListener { view ->
-      Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+      Snackbar.make(view, "Select you payment method", Snackbar.LENGTH_LONG).setAction("Action", null).show()
     }
   }
 

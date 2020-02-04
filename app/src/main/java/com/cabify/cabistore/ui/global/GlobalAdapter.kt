@@ -90,7 +90,7 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
 
   class ProductsDiffCallback : DiffUtil.ItemCallback<Products>() {
     override fun areItemsTheSame(oldItem: Products, newItem: Products): Boolean {
-      return oldItem.productId == newItem.productId
+      return oldItem.code == newItem.code
     }
 
     override fun areContentsTheSame(oldItem: Products, newItem: Products): Boolean {
