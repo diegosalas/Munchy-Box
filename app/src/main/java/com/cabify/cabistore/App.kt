@@ -31,8 +31,7 @@ class App : Application() {
     lateinit var context: Context
       private set
 
-    //val quantityOrdered: IntArray = IntArray(p.size)
-    var quantityOrdered: IntArray = IntArray(3)
+
 
 
 

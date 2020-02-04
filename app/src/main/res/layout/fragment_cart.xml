@@ -13,14 +13,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+      android:id="@+id/tvString"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="156dp"
+      android:layout_marginBottom="55dp"
+      android:text="@{viewModel.sales.toString()}"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toTopOf="@+id/recyclerViewCart"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.426"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/recyclerViewCart"
       android:layout_width="400dp"
       android:layout_height="181dp"
-      android:layout_marginTop="230dp"
+      android:layout_marginTop="8dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toBottomOf="@+id/tvString"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      />
+
 
     <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/payment_source"
@@ -52,5 +69,19 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/payment_source" />
+
+    <ListView
+      android:id="@+id/listView"
+      android:layout_width="409dp"
+      android:layout_height="225dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginTop="1dp"
+      android:layout_marginEnd="1dp"
+      android:layout_marginBottom="1dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_confirm_payment" />
+
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

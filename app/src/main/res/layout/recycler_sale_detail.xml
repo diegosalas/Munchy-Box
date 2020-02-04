@@ -11,8 +11,6 @@
       type="com.cabify.cabistore.database.SaleDetail" />
 
 
-
-
   </data>
 
   <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,7 +70,8 @@
       android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="@+id/viewAccounts"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/viewAccounts" />
+      app:layout_constraintTop_toTopOf="@+id/viewAccounts"
+     />
 
     <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/tvItemsAmount"

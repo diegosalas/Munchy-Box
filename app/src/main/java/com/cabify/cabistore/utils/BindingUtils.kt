@@ -1,4 +1,4 @@
-package com.cabify.cabistore.ui.global
+package com.cabify.cabistore.utils
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter

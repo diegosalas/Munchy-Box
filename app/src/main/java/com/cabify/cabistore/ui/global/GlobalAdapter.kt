@@ -16,12 +16,6 @@ import com.cabify.cabistore.databinding.RecyclerProductsBinding
 class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: AddListener, val removeClickListener: RemoveListener) : ListAdapter<SaleDetail, GlobalAdapter.ViewHolder>(
   ProductsDiffCallback()) {
 
-  //  var data = listOf<Products>()
-  //    set(value) {
-  //      field = value
-  //
-  //      notifyDataSetChanged()
-  //    }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     val item = getItem(position)
@@ -35,10 +29,7 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
     return ViewHolder.from(parent)
   }
 
-  //  override fun getItemCount(): Int {
-  //
-  //    return data.size
-  //  }
+
 
 
 
@@ -56,31 +47,7 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
 
 
 
-      /*binding.addButton.setOnClickListener {
 
-        if (adapterPosition >= 0 && adapterPosition < App.quantityOrdered.size) {
-          App.quantityOrdered[position]++
-          binding.quantityTextView.text = App.quantityOrdered[position].toString()
-          val total = App.prefs.getInt("total", 0)
-          App.prefs.commit {
-            putInt("total",total + (item.quantity * item.price))
-          }
-        }
-
-      }
-      binding.removeButton.setOnClickListener {
-        if (App.quantityOrdered[position] > 0) {
-          App.quantityOrdered[position]--
-          binding.quantityTextView.text = App.quantityOrdered[position].toString()
-          val total = App.prefs.getInt("total", 0)
-          App.prefs.commit {
-            putInt("total",total - (item.quantity * item.price))
-          }
-
-
-        }
-
-      }*/
     }
 
     companion object {

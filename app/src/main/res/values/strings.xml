@@ -14,5 +14,9 @@
   <string name="zero">0</string>
   <string name="available">available</string>
   <string name="add_payment_method">Add payment method</string>
+  <string name="add_shipping_details">Add shipping address</string>
   <string name="my_item">Item</string>
+  <string name="setup_payment_credentials">Setup Payment Credentials</string>
+  <string name="checkout_shipping_cost_label">Shipping</string>
+  <string name="checkout_total_cost_label">Total</string>
 </resources>
