@@ -16,6 +16,9 @@ interface StoreDatabaseDao {
   @Query("UPDATE sale_list_table SET quantity = :quantity WHERE code =:code")
   fun updateQuantityStr( code:String,quantity: Int)
 
+  @Query("UPDATE sale_list_table SET price = :price WHERE code =:code")
+  fun updatePrice(code: String, price: Double)
+
   @Query("UPDATE sale_list_table SET quantity = :quantity WHERE code =:code")
   fun updateProductQty( code:String, quantity: Int)
 
@@ -36,11 +39,11 @@ interface StoreDatabaseDao {
   fun getList(): LiveData<List<SaleDetail>>
 
   @Query("SELECT sum(price * quantity) FROM sale_list_table")
-  fun getTotal(): LiveData<Int>
+  fun getTotal(): LiveData<Double>
 
 
   @Query("SELECT * FROM sale_list_table ORDER BY code DESC")
-  fun getAllSales(): LiveData<List<SaleDetail>>
+  fun getAllSales(): List<SaleDetail>
 
 
   @Query("SELECT * FROM sale_list_table ORDER BY code DESC")

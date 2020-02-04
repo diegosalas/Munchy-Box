@@ -1,6 +1,7 @@
 package com.cabify.cabistore.ui.global
 
 import android.app.Application
+import android.util.Log
 
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -18,7 +19,7 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
   private var viewModelJob = Job()
   private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
   private val _total = MutableLiveData(database.getTotal())
-  val total: MutableLiveData<LiveData<Int>> = _total
+  val total: MutableLiveData<LiveData<Double>> = _total
 
   val products = database.getAllProducts()
 
@@ -26,13 +27,14 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
     withContext(Dispatchers.IO) {
       if (database.get(item.code) == 0) {
 
-        item.quantity = database.get(item.code)
+
         database.insertItem(item)
 
       } else {
 
         database.updateQuantityStr(item.code, item.quantity)
-
+        discountBuyTwoGetOne(item.code, item.quantity)
+        discountBuyThree(item.code, item.quantity)
       }
     }
   }
@@ -41,13 +43,34 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
     withContext(Dispatchers.IO) {
 
       if (database.get(code) > 0) {
-        database.updateQuantityStr(code, quantity)
+        if( quantity>= 0)
+          database.updateQuantityStr(code, quantity)
+        discountBuyTwoGetOne(code, quantity)
+        discountBuyThree(code, quantity)
       }
+
     }
 
   }
 
-  fun addItem(code: String, name: String, price: Int, quantity: Int) {
+  fun discountBuyTwoGetOne(code: String, quantity: Int){
+    if(code =="VOUCHER" && quantity == 1){
+      database.deleteItem("DISCOUNT")
+    }else if(code =="VOUCHER" && quantity >= 2){
+      val decimal = (Math.ceil((quantity / 2).toDouble())).toInt()
+      addItem("DISCOUNT","2X1 Discount on Voucher", -5.00, decimal )
+    }
+  }
+
+  fun discountBuyThree(code: String, quantity: Int){
+    if(code =="TSHIRT" && quantity < 3){
+      database.updatePrice(code, 20.00)
+    }else if(code =="TSHIRT" && quantity >= 3){
+      database.updatePrice(code, 19.00)
+    }
+  }
+
+  fun addItem(code: String, name: String, price: Double, quantity: Int) {
     uiScope.launch {
 
       val sale = SaleDetail(code, name, price, quantity)
@@ -76,7 +99,7 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
       for (i in 0 until accountJson.length()) {
         val code: String = accountJson.getJSONObject(i).getString("code")
         val name = accountJson.getJSONObject(i).getString("name")
-        val price = accountJson.getJSONObject(i).getInt("price")
+        val price = accountJson.getJSONObject(i).getDouble("price")
         addItem(code, name, price, 0)
 
       }
