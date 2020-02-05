@@ -7,22 +7,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cabify.cabistore.api.ApiUtils
 import com.cabify.cabistore.database.Products
+
 import com.cabify.cabistore.database.SaleDetail
 import com.cabify.cabistore.database.StoreDatabaseDao
-import com.google.gson.JsonArray
 
-import com.squareup.moshi.JsonAdapter
+
+
 import kotlinx.coroutines.*
-import org.json.JSONArray
 
-import org.json.JSONObject
-import org.json.JSONStringer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
 import kotlin.math.ceil
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+
 
 class GlobalViewModel(val database: StoreDatabaseDao, application: Application) : AndroidViewModel(application) {
 
@@ -101,27 +99,23 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
     try {
 
 
-      ApiUtils.apiService.readItems().enqueue(object : Callback <SaleDetail> {
+      ApiUtils.apiService.readItems().enqueue(object : Callback <Products> {
 
-        override fun onResponse(call: Call<SaleDetail>, response: Response<SaleDetail>) {
+        override fun onResponse(call: Call<Products>, response: Response<Products>) {
           if (response.isSuccessful) {
-            Log.d(tag, "Success: ${response.body().toString()} Product Quantity")
-//            val jsonArr = JSONArray("["+ response.body()+"]")
-//            val jsonArr = JSONArray(response.body())
-//            val jsonObjc = jsonArr.getJSONObject(0)
-//            val accountJson = jsonObjc.getJSONArray("products")
-//            for (i in 0 until accountJson.length()) {
-//              val code: String = accountJson.getJSONObject(i).getString("code")
-//              val name = accountJson.getJSONObject(i).getString("name")
-//              val price = accountJson.getJSONObject(i).getDouble("price")
-//              addItem(code, name, price, 0)
-//            }
-            addItem(response.body()!!.code,response.body()!!.name,response.body()!!.price,response.body()!!.quantity)
+
+            for (i in 0 until response.body()!!.products.size) {
+              val code: String = response.body()!!.products[i].code
+              val name = response.body()!!.products[i].name
+              val price = response.body()!!.products[i].price
+              addItem(code, name, price, 0)
+           }
+
           }
         }
 
 
-        override fun onFailure(call: Call<SaleDetail>, t: Throwable) {
+        override fun onFailure(call: Call<Products>, t: Throwable) {
           Log.e(tag,  t.localizedMessage!!)
         }
 
