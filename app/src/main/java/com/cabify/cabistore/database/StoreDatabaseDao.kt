@@ -42,8 +42,8 @@ interface StoreDatabaseDao {
   fun getTotal(): LiveData<Double>
 
 
-  @Query("SELECT * FROM sale_list_table ORDER BY code DESC")
-  fun getAllSales(): List<SaleDetail>
+  @Query("SELECT * FROM sale_list_table WHERE quantity > 0 ORDER BY code DESC ")
+  fun getAllSales(): LiveData<List<SaleDetail>>
 
 
   @Query("SELECT * FROM sale_list_table ORDER BY code DESC")

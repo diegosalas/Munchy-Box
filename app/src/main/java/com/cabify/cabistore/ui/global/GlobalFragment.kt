@@ -6,19 +6,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 
 import androidx.fragment.app.Fragment
+
 import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
+import com.afollestad.materialdialogs.customview.getCustomView
 import com.cabify.cabistore.R
 
 import com.cabify.cabistore.database.StoreDatabase
 import com.cabify.cabistore.databinding.FragmentGlobalBinding
+import kotlinx.android.synthetic.main.product_detail_dialog.view.*
+import loadByURL
 
 class GlobalFragment : Fragment() {
 
@@ -38,7 +43,7 @@ class GlobalFragment : Fragment() {
       }
     })
 
-    binding.imageGraph.bringToFront()
+    //binding.imageGraph.bringToFront()
     binding.lifecycleOwner = this
 
 
@@ -51,14 +56,18 @@ class GlobalFragment : Fragment() {
 
     val adapter =
       GlobalAdapter(GlobalListener { productCode ->
-        Toast.makeText(
-          context,
-          productCode,
-          Toast.LENGTH_SHORT
-        ).show()
+
+        val dialog = MaterialDialog(activity!!)
+          .customView(R.layout.product_detail_dialog, scrollable = true)
+        val customView = dialog.getCustomView()
+        customView.ivProduct.loadByURL("https://raw.githubusercontent.com/cabify/frontend-shopping-cart-challenge/master/img/cap.png")
+
+        dialog.show()
+
       },AddListener { code, name, price, quantity ->
         val q = quantity + 1
         viewModel.addItem(code, name, price, q)
+
       },RemoveListener  { code, quantity ->
         val q = quantity - 1
         viewModel.removeItem(code, q)
@@ -86,7 +95,6 @@ class GlobalFragment : Fragment() {
     viewModel.getAccounts()
 
 
-
     return binding.root
   }
 
@@ -95,3 +103,5 @@ class GlobalFragment : Fragment() {
 
 
 }
+
+

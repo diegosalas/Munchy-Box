@@ -28,19 +28,12 @@ class CartFragment : Fragment() {
       this, viewModelFactory).get(CartViewModel::class.java)
 
     binding.viewModel = viewModel
-    //val adapter = CartAdapter()
-    //binding.recyclerViewCart.adapter = adapter
+
+    binding.recyclerView.adapter =  CartAdapter()
 
 
 
 
-//    viewModel.sales.observe(viewLifecycleOwner, Observer {
-//      it?.let {
-//        adapter.su
-//
-//
-//      }
-//    })
 
 
 

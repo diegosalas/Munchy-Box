@@ -13,23 +13,23 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     setSupportActionBar(toolbar)
-    fab.setOnClickListener { view ->
-      Snackbar.make(view, "Select you payment method", Snackbar.LENGTH_LONG).setAction("Action", null).show()
-    }
+//    fab.setOnClickListener { view ->
+//      Snackbar.make(view, "Select you payment method", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+//    }
   }
 
-  override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//  override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//
+//    menuInflater.inflate(R.menu.menu_scrolling, menu)
+//    return true
+//  }
 
-    menuInflater.inflate(R.menu.menu_scrolling, menu)
-    return true
-  }
-
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-
-    return when (item.itemId) {
-      R.id.action_settings -> true
-      else -> super.onOptionsItemSelected(item)
-    }
-  }
+//  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//
+//
+//    return when (item.itemId) {
+//      R.id.action_settings -> true
+//      else -> super.onOptionsItemSelected(item)
+//    }
+//  }
 }
