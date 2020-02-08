@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+
 import androidx.lifecycle.ViewModelProviders
 import com.cabify.cabistore.R
 import com.cabify.cabistore.database.StoreDatabase
@@ -27,8 +28,14 @@ class CartFragment : Fragment() {
       this, viewModelFactory).get(CartViewModel::class.java)
 
     binding.viewModel = viewModel
-    val adapter = CartAdapter()
-    binding.recyclerViewCart.adapter = adapter
+
+    binding.recyclerView.adapter =  CartAdapter()
+
+
+
+
+
+
 
     return binding.root
   }

@@ -11,15 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 @SuppressLint("Registered")
 class App : Application() {
 
-
-
   override fun onCreate() {
     super.onCreate()
     instance = this
     prefs = applicationContext.getSharedPreferences("cabStore", AppCompatActivity.MODE_PRIVATE)
     context = applicationContext
-
-
 
   }
 
@@ -30,10 +26,6 @@ class App : Application() {
       private set
     lateinit var context: Context
       private set
-
-    //val quantityOrdered: IntArray = IntArray(p.size)
-    var quantityOrdered: IntArray = IntArray(3)
-
 
 
   }

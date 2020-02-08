@@ -18,4 +18,6 @@
   <dimen name="text_margin">16dp</dimen>
   <dimen name="activity_padding">10dp</dimen>
   <dimen name="payment_screen_spacing">32dp</dimen>
+  <dimen name="item_padding">8dp</dimen>
+  <dimen name="shopping_cart_margin">16dp</dimen>
 </resources>

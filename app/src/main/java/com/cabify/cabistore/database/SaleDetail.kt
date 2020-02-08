@@ -10,11 +10,11 @@ data class SaleDetail(
 
 
 
-  @PrimaryKey(autoGenerate = false)  val code: String = "DEFAULT",
+  @PrimaryKey(autoGenerate = false) val code: String = "DEFAULT",
 
   @ColumnInfo val name: String = "",
 
-  @ColumnInfo val price: Int = 0,
+  @ColumnInfo val price: Double = 0.00,
 
   @ColumnInfo var quantity: Int = 0
 

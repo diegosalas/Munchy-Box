@@ -103,7 +103,9 @@
       app:layout_constraintStart_toEndOf="@+id/textItem"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"
       app:layout_constraintVertical_bias="0.511"
-      app:srcCompat="@drawable/ic_remove_box" />
+      app:srcCompat="@drawable/ic_remove_box"
+
+      />
 
     <androidx.appcompat.widget.AppCompatImageView
       android:id="@+id/addButton"
@@ -119,7 +121,9 @@
       app:layout_constraintStart_toEndOf="@+id/tvItemQty"
       app:layout_constraintTop_toTopOf="@+id/viewAccounts"
       app:layout_constraintVertical_bias="0.538"
-      app:srcCompat="@drawable/ic_add_box" />
+      app:srcCompat="@drawable/ic_add_box"
+
+      />
 
     <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/textAccountNumber"
