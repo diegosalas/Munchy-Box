@@ -55,13 +55,13 @@ class GlobalFragment : Fragment() {
     binding.viewModel = viewModel
 
     val adapter =
-      GlobalAdapter(GlobalListener { productCode ->
+      GlobalAdapter(GlobalListener { code, name,price ->
 
         val dialog = MaterialDialog(activity!!)
           .customView(R.layout.product_detail_dialog, scrollable = true)
         val customView = dialog.getCustomView()
         customView.ivProduct.loadByURL("https://raw.githubusercontent.com/cabify/frontend-shopping-cart-challenge/master/img/cap.png")
-
+        customView.tvproductName.text = (name)
         dialog.show()
 
       },AddListener { code, name, price, quantity ->

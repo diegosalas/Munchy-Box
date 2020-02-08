@@ -66,18 +66,18 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
       <TextView
-        android:id="@+id/tvString2"
-        android:layout_width="8dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/primaryDark_custom"
-        android:gravity="end"
-        android:text="€"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+          android:id="@+id/tvString2"
+          android:layout_width="8dp"
+          android:layout_height="0dp"
+          android:layout_marginEnd="16dp"
+          android:background="@color/primaryDark_custom"
+          android:gravity="end"
+          android:text="@string/dollar"
+          android:textColor="@color/white"
+          android:textStyle="bold"
+          android:visibility="visible"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
       <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

@@ -31,7 +31,7 @@ fun TextView.setProductCode(item: SaleDetail?){
 @BindingAdapter("setProductPrice")
 fun TextView.setProductPrice(item: SaleDetail?){
   item?.let{
-    text = item.price.toString() + " €"
+    text = item.price.toString() + " $"
   }
 }
 
@@ -40,7 +40,7 @@ fun TextView.setProductPrice(item: SaleDetail?){
 fun TextView.setProductSubTotal(item: SaleDetail?){
   item?.let{
     var subTotal = item.price * item.quantity
-    text = "$subTotal €"
+    text = "$subTotal $"
   }
 }
 

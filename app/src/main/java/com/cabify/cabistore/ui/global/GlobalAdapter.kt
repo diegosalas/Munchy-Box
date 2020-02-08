@@ -59,8 +59,8 @@ class GlobalAdapter(val clickListener: GlobalListener, val addClickListener: Add
   }
 }
 
-class GlobalListener(val clickListener: (productCode: String) -> Unit) {
-  fun onClick(product: SaleDetail) = clickListener(product.code)
+class GlobalListener(val clickListener: (productCode: String,productName : String, productPrice:Double)  -> Unit) {
+  fun onClick(product: SaleDetail) = clickListener(product.code, product.name, product.price )
 }
 
 class AddListener(val AddClickListener: (productCode: String, productName: String, productPrice: Double, productQty: Int) -> Unit) {

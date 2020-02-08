@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">CabiStore</string>
+  <string name="app_name">Munchy Box</string>
 
   <string name="action_settings">Settings</string>
   <string name="my_products">My Products</string>
@@ -14,5 +14,6 @@
   <string name="zero">0</string>
   <string name="available">available</string>
   <string name="add_payment_method">Add payment method</string>
+  <string name="dollar">$</string>
 
 </resources>

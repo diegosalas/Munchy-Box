@@ -5,14 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
-
+apply plugin: 'com.google.gms.google-services'
 
 
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion = versions.buildTools
     defaultConfig {
-        applicationId "com.cabify.cabistore"
+        applicationId "io.munchybox.app"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode 1
@@ -21,12 +21,14 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            // minifyEnabled true
+            // shrinkResources true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", "\"https://api.myjson.com/bins/4bwec/\""
         }
 
-        debug{
+        debug {
             buildConfigField "String", "BASE_URL", "\"https://api.myjson.com/bins/4bwec/\""
         }
 
@@ -64,6 +66,8 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$version_retrofit"
     api "com.squareup.retrofit2:converter-moshi:$version_retrofit"
 
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.room:room-runtime:2.2.3'
