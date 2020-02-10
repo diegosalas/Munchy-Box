@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
  >
 
@@ -8,80 +9,101 @@
   </data>
 
   <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-      android:id="@+id/tvEnterTag"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="120dp"
-      android:fontFamily="@font/avenir"
-      android:text="@string/lb_tag"
-      android:textColor="@color/surfaceGray"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/tilDocument"
-      style="@style/LoginTextInputLayoutStyle"
-      android:layout_width="231dp"
-      android:layout_height="57dp"
-      android:layout_marginTop="50dp"
-      app:endIconCheckable="true"
-      app:endIconTint="@color/eyeColor"
-      app:errorTextColor="@color/error"
-      app:hintEnabled="false"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tvEnterTag"
-      app:passwordToggleContentDescription="@string/description">
-
-      <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txTag"
-        style="@style/CaminosTextEditStyle"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:gravity="center"
-        android:hint="@string/entertagnumber"
-        android:imeActionLabel="@string/enter"
-        android:imeOptions="actionDone"
-        android:inputType="number|textCapCharacters"
-        android:selectAllOnFocus="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
 
     <androidx.appcompat.widget.AppCompatButton
-      android:id="@+id/btEnterTag"
-      style="@style/skipButtonStyle"
-      android:layout_width="231dp"
-      android:layout_height="49dp"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="50dp"
-      android:layout_marginEnd="16dp"
-      android:background="@drawable/shapeforbutton"
-      android:gravity="center"
-      android:insetTop="0dp"
-      android:insetBottom="0dp"
-      android:text="@string/enter"
-      android:textAllCaps="true"
-      android:textColor="@color/colorPrimaryDark"
-      android:textColorHighlight="@color/colorPrimaryDark"
-      android:textColorHint="@color/colorPrimaryDark"
-      android:textColorLink="@color/colorPrimaryDark"
-      android:textCursorDrawable="@color/colorPrimaryDark"
-      android:textSize="14sp"
-      android:textStyle="normal"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tilDocument" />
+        android:id="@+id/btEnterTag"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/shapeforbutton"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/enter"
+        android:textAllCaps="true"
+        android:textColor="@color/surfaceGray"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textCursorDrawable="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEnterTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/avenir"
+        android:text="@string/lb_tag"
+        android:textColor="@color/surfaceGray"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="32dp"
+
+        android:backgroundTint="@color/bg_blue"
+        android:foregroundTint="@color/bg_blue"
+
+
+        android:textColor="@color/surfaceGray"
+        app:boxBackgroundColor="@color/backgroundGray"
+        app:boxStrokeColor="@color/surfaceGray"
+        app:counterTextColor="@color/bg_blue"
+        app:endIconTint="@color/bg_blue"
+        app:helperTextTextColor="@color/bg_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterTag"
+        app:passwordToggleTint="@color/bg_blue"
+        app:placeholderTextColor="@color/bg_blue"
+        app:prefixTextColor="@color/bg_blue"
+        app:startIconTint="@color/bg_blue"
+        app:suffixTextColor="@color/bg_blue">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/txTag"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:backgroundTint="@color/colorPrimary"
+          android:drawableTint="@color/bg_blue"
+          android:foregroundTint="@color/bg_blue"
+          android:gravity="center"
+          android:hint="@string/entertagnumber"
+          android:imeActionLabel="@string/enter"
+          android:imeOptions="actionDone"
+          android:inputType="number|textCapCharacters"
+          android:selectAllOnFocus="true"
+          android:textColor="@color/surfaceGray"
+          android:textColorHighlight="@color/bg_blue"
+
+          android:textColorHint="@color/bg_blue"
+          android:textColorLink="@color/bg_blue"
+          android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
