@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+      android:id="@+id/tvEnterTag"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="120dp"
+      android:fontFamily="@font/avenir"
+      android:text="@string/lb_tag"
+      android:textColor="@color/surfaceGray"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/tilDocument"
+      style="@style/LoginTextInputLayoutStyle"
+      android:layout_width="231dp"
+      android:layout_height="57dp"
+      android:layout_marginTop="50dp"
+      app:endIconCheckable="true"
+      app:endIconTint="@color/eyeColor"
+      app:errorTextColor="@color/error"
+      app:hintEnabled="false"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvEnterTag"
+      app:passwordToggleContentDescription="@string/description">
+
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txTag"
+        style="@style/CaminosTextEditStyle"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:hint="@string/entertagnumber"
+        android:imeActionLabel="@string/enter"
+        android:imeOptions="actionDone"
+        android:inputType="number|textCapCharacters"
+        android:selectAllOnFocus="true"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btEnterTag"
+      style="@style/skipButtonStyle"
+      android:layout_width="231dp"
+      android:layout_height="49dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="50dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/shapeforbutton"
+      android:gravity="center"
+      android:insetTop="0dp"
+      android:insetBottom="0dp"
+      android:text="@string/enter"
+      android:textAllCaps="true"
+      android:textColor="@color/colorPrimaryDark"
+      android:textColorHighlight="@color/colorPrimaryDark"
+      android:textColorHint="@color/colorPrimaryDark"
+      android:textColorLink="@color/colorPrimaryDark"
+      android:textCursorDrawable="@color/colorPrimaryDark"
+      android:textSize="14sp"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tilDocument" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
