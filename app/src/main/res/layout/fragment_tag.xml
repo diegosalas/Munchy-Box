@@ -11,7 +11,7 @@
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      >
+      android:background="@color/bg_blue">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btEnterTag"
@@ -44,7 +44,7 @@
         android:layout_marginTop="90dp"
         android:fontFamily="@font/avenir"
         android:text="@string/lb_tag"
-        android:textColor="@color/surfaceGray"
+        android:textColor="@color/accent_custom"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,50 +60,32 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="32dp"
 
-        android:backgroundTint="@color/bg_blue"
-        android:foregroundTint="@color/bg_blue"
-
 
         android:textColor="@color/surfaceGray"
-        app:boxBackgroundColor="@color/backgroundGray"
-        app:boxStrokeColor="@color/surfaceGray"
-        app:counterTextColor="@color/bg_blue"
-        app:endIconTint="@color/bg_blue"
-        app:helperTextTextColor="@color/bg_blue"
+        app:boxStrokeColor="@color/accent_custom"
+        app:hintTextColor="@color/accent_custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnterTag"
-        app:passwordToggleTint="@color/bg_blue"
-        app:placeholderTextColor="@color/bg_blue"
-        app:prefixTextColor="@color/bg_blue"
-        app:startIconTint="@color/bg_blue"
-        app:suffixTextColor="@color/bg_blue">
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterTag">
 
       <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/txTag"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:backgroundTint="@color/colorPrimary"
-          android:drawableTint="@color/bg_blue"
-          android:foregroundTint="@color/bg_blue"
           android:gravity="center"
           android:hint="@string/entertagnumber"
           android:imeActionLabel="@string/enter"
           android:imeOptions="actionDone"
           android:inputType="number|textCapCharacters"
           android:selectAllOnFocus="true"
-          android:textColor="@color/surfaceGray"
-          android:textColorHighlight="@color/bg_blue"
+          android:textColor="@color/accent_custom"
 
-          android:textColorHint="@color/bg_blue"
-          android:textColorLink="@color/bg_blue"
+          android:textColorHint="@color/accent_custom"
+          android:textColorLink="@color/accent_custom"
           android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
