@@ -6,12 +6,12 @@
 
   <activity
     android:id="@+id/mainActivity"
-    android:name="com.cabify.cabistore.MainActivity"
+    android:name="com.munchybox.app.MainActivity"
     android:label="activity_scrolling"
     tools:layout="@layout/activity_main" />
   <fragment
     android:id="@+id/globalFragment"
-    android:name="com.cabify.cabistore.ui.global.GlobalFragment"
+    android:name="com.munchybox.app.ui.global.GlobalFragment"
     android:label="GlobalFragment" >
     <action
       android:id="@+id/cart_action"
@@ -21,11 +21,11 @@
   </fragment>
   <fragment
     android:id="@+id/cartFragment"
-    android:name="com.cabify.cabistore.ui.cart.CartFragment"
+    android:name="com.munchybox.app.ui.cart.CartFragment"
     android:label="CartFragment" />
   <fragment
     android:id="@+id/tagFragment"
-    android:name="com.cabify.cabistore.ui.tag.TagFragment"
+    android:name="com.munchybox.app.ui.tag.TagFragment"
     android:label="TagFragment" >
     <action
       android:id="@+id/global_action"

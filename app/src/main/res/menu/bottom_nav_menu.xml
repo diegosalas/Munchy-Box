@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ App Android
-  ~ Copyright (C) 2020 Banco Caminos
-  ~ All Rights Reserved, unauthorized copying of this file, via any medium is strictly prohibited.
-  ~ Proprietary and confidential.
-  ~ Written by Banco Caminos <https://www.bancocaminos.es>, 2020
-  -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <group android:id="@+id/primary">
 
