@@ -7,4 +7,6 @@ Helping Lyft and Uber drivers earn extra money while giving passengers the oppor
 
 https://www.clickndeal.com.au/
 
-Created by Diego Perez Tel 611144036
+carlosdelmonaco@gmail.com
+
+Ph. +61 415 009 234

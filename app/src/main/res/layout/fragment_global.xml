@@ -6,7 +6,7 @@
   <data>
     <variable
       name="viewModel"
-      type="com.cabify.cabistore.ui.global.GlobalViewModel" />
+      type="com.munchybox.app.ui.global.GlobalViewModel" />
   </data>
 
   <androidx.constraintlayout.widget.ConstraintLayout

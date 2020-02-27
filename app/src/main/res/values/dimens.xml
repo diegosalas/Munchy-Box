@@ -1,18 +1,11 @@
-<!--
-  ~ App Android
-  ~ Copyright (C) 2020 Banco Caminos
-  ~ All Rights Reserved, unauthorized copying of this file, via any medium is strictly prohibited.
-  ~ Proprietary and confidential.
-  ~ Written by Banco Caminos <https://www.bancocaminos.es>, 2020
-  -->
 <resources>
+  <dimen name="borderradius">15dp</dimen>
+  <dimen name="borderradiusnew">6dp</dimen>
+  <dimen name="borderradiusCK">7dp</dimen>
+  <dimen name="strokelineCK">2dp</dimen>
+  <dimen name="borderradiusBGG">30dp</dimen>
   <dimen name="headerTitle">20sp</dimen>
   <dimen name="headerMargin">14dp</dimen>
-  <dimen name="strokelineCK">3dp</dimen>
-  <dimen name="borderradius">3dp</dimen>
-  <dimen name="borderradiusnew">3dp</dimen>
-  <dimen name="borderradiusCK">3dp</dimen>
-  <dimen name="borderradiusBGG">12dp</dimen>
   <dimen name="app_bar_height">180dp</dimen>
   <dimen name="fab_margin">16dp</dimen>
   <dimen name="text_margin">16dp</dimen>
