@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <attr name="sample_button_color" format="color" />
+
+  <declare-styleable name="CustomTheme">
+    <attr name="dividerColor" format="color|reference" />
+    <attr name="themeName" format="string" />
+    <attr name="themeDescription" format="string" />
+    <attr name="tabLayoutStyle" format="reference" />
+    <attr name="fpColor" format="color|reference" />
+    <attr name="bgTextEdit" format="color" />
+    <attr name="tietTextColor" format="color" />
+    <attr name="shieldColor" format="color" />
+  </declare-styleable>
+</resources>

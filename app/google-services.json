@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1004074412283",
+    "firebase_url": "https://mbox-eff46.firebaseio.com",
+    "project_id": "mbox-eff46",
+    "storage_bucket": "mbox-eff46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004074412283:android:9e5ad28b7244247b89e85e",
+        "android_client_info": {
+          "package_name": "io.munchybox.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004074412283-h15u5n43nk6ml5adtrk39p7i8c0e3566.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.munchybox.app",
+            "certificate_hash": "1214db64f8659bd51ef0a354ad29c16c0d78ddc6"
+          }
+        },
+        {
+          "client_id": "1004074412283-u9sij11q0hhbom7tf911fcpu1ab5ibgg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIopx_jK0Hch3rf06-o-D14oWcUC9jJ2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004074412283-u9sij11q0hhbom7tf911fcpu1ab5ibgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
