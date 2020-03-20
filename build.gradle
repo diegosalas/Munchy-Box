@@ -5,7 +5,7 @@ buildscript {
 
     ext.versions = [
         'compileSdk'              : 29,
-        'minSdk'                  : 26,
+        'minSdk'                  : 23,
         'targetSdk'               : 29,
         'buildTools'              : '29.0.2',
         'versionCode'           : 1,
@@ -46,7 +46,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.6.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.2.0'
 
