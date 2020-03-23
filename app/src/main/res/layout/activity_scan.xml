@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.munchibox.app.ScanActivity"
+    tools:context="com.munchybox.app.ScanActivity"
     android:background="@color/white">
 
     <androidx.appcompat.widget.AppCompatButton

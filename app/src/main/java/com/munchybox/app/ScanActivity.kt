@@ -1,4 +1,4 @@
-package com.munchibox.app
+package com.munchybox.app
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.View
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
-import com.munchybox.app.MainActivity
-import com.munchybox.app.Principal
 import com.munchybox.app.R.layout.activity_scan
 import kotlinx.android.synthetic.main.activity_scan.*
 

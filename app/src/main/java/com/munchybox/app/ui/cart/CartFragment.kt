@@ -1,5 +1,6 @@
 package com.munchybox.app.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +9,22 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 
 import androidx.lifecycle.ViewModelProviders
-
+import com.munchybox.app.CheckoutActivity
 
 
 import com.munchybox.app.R
 import com.munchybox.app.database.StoreDatabase
 import com.munchybox.app.databinding.FragmentCartBinding
+import com.stripe.android.PaymentConfiguration
+import com.stripe.android.Stripe
+import com.stripe.android.model.ConfirmPaymentIntentParams
 
 
 class CartFragment : Fragment() {
 
   private lateinit var binding: FragmentCartBinding
+  private lateinit var paymentIntentClientSecret: String
+  private lateinit var stripe: Stripe
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cart, container, false)
@@ -35,6 +41,15 @@ class CartFragment : Fragment() {
 
     binding.recyclerView.adapter =  CartAdapter()
 
+    binding.addCard.setOnClickListener {
+
+      val intent = Intent(activity!!, CheckoutActivity::class.java)
+      intent.putExtra("total", binding.tvTotalPay.text.toString())
+
+      startActivity(intent)
+
+    }
+
 
 
 
@@ -43,4 +58,6 @@ class CartFragment : Fragment() {
 
     return binding.root
   }
+
+
 }

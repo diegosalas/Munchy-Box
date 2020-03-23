@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.munchibox.app.LoginActivity">
+    tools:context="com.munchybox.app.LoginActivity">
 
 
     <com.google.android.gms.common.SignInButton

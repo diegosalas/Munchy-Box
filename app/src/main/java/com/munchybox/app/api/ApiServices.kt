@@ -26,10 +26,10 @@ private val retrofit = Retrofit.Builder()
   .build()
 
 interface APIService {
+//https://api.myjson.com/bins/12hlbc
 
 
-//  @GET("4bwec")
-  @GET("ockai")
+  @GET("12hlbc")
   fun readItems(): Call <Products>
 
 }

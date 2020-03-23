@@ -1,6 +1,7 @@
 
 package com.munchybox.app.ui.global
 
+import android.content.Intent
 import android.os.Bundle
 
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import androidx.navigation.fragment.findNavController
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
+import com.munchybox.app.CheckoutActivity
 import com.munchybox.app.R
 import com.munchybox.app.database.StoreDatabase
 import com.munchybox.app.databinding.FragmentGlobalBinding
@@ -76,7 +78,23 @@ class GlobalFragment : Fragment() {
       )
 
     binding.ivGoToCart.setOnClickListener {
-      findNavController().navigate(R.id.cart_action)
+     findNavController().navigate(R.id.cart_action)
+
+
+    }
+
+    binding.imageContactContent.setOnClickListener{
+      val to = "feedback@munchybox.io"
+      val subject = "Feedback"
+      val message = "Hello, How can We help you?"
+      val intent = Intent(Intent.ACTION_SEND)
+      val addressees = arrayOf(to)
+      intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+      intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+      intent.putExtra(Intent.EXTRA_TEXT, message)
+      intent.setType("message/rfc822")
+      startActivity(Intent.createChooser(intent, "Send Email using:"))
+
     }
 
 

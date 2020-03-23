@@ -8,9 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import com.munchibox.app.ScanActivity
-
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,12 +24,13 @@ class LoginActivity : AppCompatActivity() {
     fun googleLogin(){
 
         val providers = arrayListOf(
-            AuthUI.IdpConfig.EmailBuilder().build()
-            ,
+
+            AuthUI.IdpConfig.EmailBuilder().build(),
             AuthUI.IdpConfig.PhoneBuilder().build(),
-            AuthUI.IdpConfig.GoogleBuilder().build(),
-            AuthUI.IdpConfig.FacebookBuilder().build(),
-            AuthUI.IdpConfig.TwitterBuilder().build()
+
+          //  AuthUI.IdpConfig.FacebookBuilder().build(),
+           // AuthUI.IdpConfig.TwitterBuilder().build(),
+            AuthUI.IdpConfig.GoogleBuilder().build()
             )
 
 
@@ -44,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
                     .setTheme(R.style.AppThemeLogin)
                     .setAvailableProviders(providers)
                     .setIsSmartLockEnabled(false)
+                    .enableAnonymousUsersAutoUpgrade()
                     .build(),
                 RC_SIGN_IN)
 
@@ -58,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
-                Toast.makeText(this,"Bienvenid@ ${user!!.displayName} - ${user!!.uid}",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Bienvenid@ ${user!!.displayName} ",Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this,ScanActivity::class.java))
                 finish()
             } else {

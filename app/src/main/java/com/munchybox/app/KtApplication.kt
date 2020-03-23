@@ -1,4 +1,4 @@
-package com.munchibox.app
+package com.munchybox.app
 
 
 import androidx.multidex.MultiDexApplication

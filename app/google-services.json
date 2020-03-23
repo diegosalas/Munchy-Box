@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "1004074412283-pothhneunvdiht7bfk47dbdj9dnl6d4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.munchybox.app",
+            "certificate_hash": "856ea85965f2bba7764bbda312e18fdcc250532e"
+          }
+        },
+        {
+          "client_id": "1004074412283-948n5vfeor5j0uspljeof0jq6nludng4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.munchybox.app",
+            "certificate_hash": "75d34a0f5a8fef839365b6fb80c3e79e8a8b08a3"
+          }
+        },
+        {
           "client_id": "1004074412283-h15u5n43nk6ml5adtrk39p7i8c0e3566.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
