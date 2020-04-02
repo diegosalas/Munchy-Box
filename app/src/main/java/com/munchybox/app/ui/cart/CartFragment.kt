@@ -23,8 +23,7 @@ import com.stripe.android.model.ConfirmPaymentIntentParams
 class CartFragment : Fragment() {
 
   private lateinit var binding: FragmentCartBinding
-  private lateinit var paymentIntentClientSecret: String
-  private lateinit var stripe: Stripe
+
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cart, container, false)

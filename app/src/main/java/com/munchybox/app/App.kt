@@ -15,7 +15,7 @@ class App : Application() {
     super.onCreate()
     PaymentConfiguration.init(
       applicationContext,
-      "pk_test_b9b5KIQJDgjC6rWY9LI07dPR"
+      "pk_test_TYooMQauvdEDq54NiTphI7jx"
     )
     instance = this
     prefs = applicationContext.getSharedPreferences("cabStore", AppCompatActivity.MODE_PRIVATE)

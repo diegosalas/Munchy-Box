@@ -107,7 +107,7 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
             for (i in response.body()!!.products.indices) {
               val code: String = response.body()!!.products[i].code
               val name = response.body()!!.products[i].name
-              val price = response.body()!!.products[i].price
+              val price: Double = response.body()!!.products[i].price
 
               addItem(code, name, price, 0)
             }
@@ -117,28 +117,28 @@ class GlobalViewModel(val database: StoreDatabaseDao, application: Application) 
 
         override fun onFailure(call: Call<Products>, t: Throwable) {
           Log.e(tag, t.localizedMessage!!)
-          try {
-            /*
-
-            Fill with our basic products if the customer opens the App for first time without Internet Connection
-
-            */
-            val jsonArr = JSONArray("""[{"products":[
-                                           {"code":"VOUCHER","name":"Munchy Voucher","price":5},
-                                           {"code":"TSHIRT","name":"Munchy T-Shirt","price":20},
-                                           {"code":"MUG","name":"Munchy Coffee Mug","price":7.5}
-                                            ]}]""")
-            val jsonObjc = jsonArr.getJSONObject(0)
-            val accountJson = jsonObjc.getJSONArray("products")
-            for (i in 0 until accountJson.length()) {
-              val code: String = accountJson.getJSONObject(i).getString("code")
-              val name = accountJson.getJSONObject(i).getString("name")
-              val price = accountJson.getJSONObject(i).getDouble("price")
-              addItem(code, name, price, 0)
-
-            }
-          } catch (e: IOException) {
-          }
+//          try {
+//            /*
+//
+//            Fill with our basic products if the customer opens the App for first time without Internet Connection
+//
+//            */
+//            val jsonArr = JSONArray("""[{"products":[
+//                                           {"code":"VOUCHER","name":"Munchy Voucher","price":5},
+//                                           {"code":"TSHIRT","name":"Munchy T-Shirt","price":20},
+//                                           {"code":"MUG","name":"Munchy Coffee Mug","price":7.5}
+//                                            ]}]""")
+//            val jsonObjc = jsonArr.getJSONObject(0)
+//            val accountJson = jsonObjc.getJSONArray("products")
+//            for (i in 0 until accountJson.length()) {
+//              val code: String = accountJson.getJSONObject(i).getString("code")
+//              val name = accountJson.getJSONObject(i).getString("name")
+//              val price = accountJson.getJSONObject(i).getDouble("price")
+//              addItem(code, name, price, 0)
+//
+//            }
+//          } catch (e: IOException) {
+//          }
         }
 
       })

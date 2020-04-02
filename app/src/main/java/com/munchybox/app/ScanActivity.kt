@@ -1,13 +1,17 @@
 package com.munchybox.app
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import com.munchybox.app.R.layout.activity_scan
 import kotlinx.android.synthetic.main.activity_scan.*
+import org.bouncycastle.crypto.tls.ContentType.alert
 
 class ScanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +24,12 @@ class ScanActivity : AppCompatActivity() {
         }
         btEnterTag.setOnClickListener {
 
-
-            startActivity(Intent(this, Principal::class.java))
-            finish()
+          if(txTag.text.toString() == "00061") {
+              startActivity(Intent(this, Principal::class.java))
+              finish()
+          }else{
+               Toast.makeText(this@ScanActivity,"Wrong code",Toast.LENGTH_LONG).show()
+          }
         }
 
     }
@@ -34,7 +41,7 @@ class ScanActivity : AppCompatActivity() {
 
         if(result != null){
 
-            if(result.contents != null){
+            if(result.contents != null && result.contents =="00061"){
                 tvEnterTag.text = result.contents
                 startActivity(Intent(this, Principal::class.java))
                 finish()

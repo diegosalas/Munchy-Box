@@ -29,7 +29,7 @@ interface APIService {
 //https://api.myjson.com/bins/12hlbc
 
 
-  @GET("12hlbc")
+  @GET("nmf9k")
   fun readItems(): Call <Products>
 
 }

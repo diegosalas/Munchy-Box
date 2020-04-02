@@ -65,7 +65,7 @@ class GlobalFragment : Fragment() {
         val customView = dialog.getCustomView()
         customView.ivProduct.loadByURL("https://raw.githubusercontent.com/cabify/frontend-shopping-cart-challenge/master/img/cap.png")
         customView.tvproductName.text = (name)
-        dialog.show()
+        //dialog.show()
 
       },AddListener { code, name, price, quantity ->
         val q = quantity + 1
@@ -97,7 +97,14 @@ class GlobalFragment : Fragment() {
 
     }
 
+    binding.buttonPayNow.setOnClickListener {
 
+      val intent = Intent(activity!!, CheckoutActivity::class.java)
+      intent.putExtra("total", binding.totalTextView.text.toString())
+
+      startActivity(intent)
+
+    }
 
 
     binding.recyclerView.adapter = adapter
