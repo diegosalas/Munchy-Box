@@ -14,8 +14,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 import retrofit2.http.*
 
-private const val BASE_URL = "https://api.myjson.com/bins/"
-
+//private const val BASE_URL = "https://api.myjson.com/bins/"
+private const val BASE_URL = "http://download.elmundoplay.com/"
 private val moshi = Moshi.Builder()
   .add(KotlinJsonAdapterFactory())
   .build()
@@ -29,7 +29,7 @@ interface APIService {
 //https://api.myjson.com/bins/12hlbc
 
 
-  @GET("nmf9k")
+  @GET("products.json")
   fun readItems(): Call <Products>
 
 }
