@@ -32,7 +32,7 @@ class CheckoutActivity : AppCompatActivity() {
      */
     // 10.0.2.2 is the Android emulator's alias to localhost
    // private val backendUrl = "http://10.0.2.2:4242/"
-    private val backendUrl = "https://munchytest.herokuapp.com/"
+    private val backendUrl = "https://munchyserver.herokuapp.com/"
     private val httpClient = OkHttpClient()
     private lateinit var publishableKey: String
     private lateinit var paymentIntentClientSecret: String
