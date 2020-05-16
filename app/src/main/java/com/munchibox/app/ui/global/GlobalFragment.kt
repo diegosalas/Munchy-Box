@@ -29,6 +29,7 @@ import loadByURL
 class GlobalFragment : Fragment() {
 
   private lateinit var binding: FragmentGlobalBinding
+  
 
 
 

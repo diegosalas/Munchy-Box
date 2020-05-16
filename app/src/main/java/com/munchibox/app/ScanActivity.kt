@@ -10,6 +10,11 @@ import com.munchybox.app.MainActivity
 import com.munchybox.app.Principal
 import com.munchybox.app.R.layout.activity_scan
 import kotlinx.android.synthetic.main.activity_scan.*
+import kotlinx.android.synthetic.main.activity_scan.btEnterTag
+import kotlinx.android.synthetic.main.activity_scan.textInputLayout
+import kotlinx.android.synthetic.main.activity_scan.tvEnterTag
+import kotlinx.android.synthetic.main.activity_scan.txTag
+import kotlinx.android.synthetic.main.fragment_tag.*
 
 class ScanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +27,11 @@ class ScanActivity : AppCompatActivity() {
         }
         btEnterTag.setOnClickListener {
 
+          if (txTag.text.toString() =="000061") {
+              startActivity(Intent(this, Principal::class.java))
+              finish()
+          }
 
-            startActivity(Intent(this, Principal::class.java))
-            finish()
         }
 
     }
@@ -36,7 +43,7 @@ class ScanActivity : AppCompatActivity() {
 
         if(result != null){
 
-            if(result.contents != null){
+            if(result.contents != null && result.contents=="000061"){
                 tvEnterTag.text = result.contents
                 startActivity(Intent(this, Principal::class.java))
                 finish()

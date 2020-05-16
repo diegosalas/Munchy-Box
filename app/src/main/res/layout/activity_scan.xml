@@ -104,7 +104,8 @@
             android:textColorHint="@color/accent_custom"
             android:textColorLink="@color/accent_custom"
             android:textSize="18sp"
-            android:visibility="gone" />
+            android:visibility="visible"
+            tools:visibility="gone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
